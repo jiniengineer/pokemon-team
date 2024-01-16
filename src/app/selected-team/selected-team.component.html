@@ -1,0 +1,13 @@
+<h3>My Team</h3>
+<mat-chip-list *ngIf="team">
+  <mat-chip
+    [removable]="true"
+    (removed)="removeFromTeam(pokemon)"
+    *ngFor="let pokemon of team"
+  >
+    {{ pokemon }}
+    <button matChipRemove>
+      <mat-icon>X</mat-icon>
+    </button>
+  </mat-chip>
+</mat-chip-list>

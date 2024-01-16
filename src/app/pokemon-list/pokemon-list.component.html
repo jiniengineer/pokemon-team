@@ -1,0 +1,19 @@
+<h3>Pokemon</h3>
+<mat-form-field appearance="fill">
+  <mat-label>Search</mat-label>
+  <input matInput #searchText (keyup)="onSearch(searchText.value)" />
+</mat-form-field>
+
+<ng-container *ngIf="pokemonSpecies$ | async as pokemonspecies">
+  <mat-selection-list
+    [multiple]="false"
+    (selectionChange)="onPokemonSelect($event.options[0].value)"
+  >
+    <mat-list-option
+      *ngFor="let pokemon of pokemonspecies"
+      value="{{ pokemon.name }}"
+    >
+      {{ pokemon.name }}
+    </mat-list-option>
+  </mat-selection-list>
+</ng-container>

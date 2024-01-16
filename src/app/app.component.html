@@ -1,0 +1,25 @@
+<h1>Pokemon Team Builder</h1>
+<div class="app-container">
+  <h4>Generations</h4>
+  <mat-button-toggle-group
+    [formControl]="generation"
+    (change)="updateGeneration()"
+  >
+    <mat-button-toggle value="generation-i">I</mat-button-toggle>
+    <mat-button-toggle value="generation-ii">II</mat-button-toggle>
+    <mat-button-toggle value="generation-iii">III</mat-button-toggle>
+    <mat-button-toggle value="generation-iv">IV</mat-button-toggle>
+    <mat-button-toggle value="generation-v">V</mat-button-toggle>
+    <mat-button-toggle value="generation-vi">VI</mat-button-toggle>
+    <mat-button-toggle value="generation-vii">VII</mat-button-toggle>
+    <mat-button-toggle value="generation-viii">VIII</mat-button-toggle>
+  </mat-button-toggle-group>
+
+  <app-selected-team #team></app-selected-team>
+
+  <app-pokemon-list></app-pokemon-list>
+
+  <app-pokemon-details
+    (addedToTeam)="team.addToTeam($event)"
+  ></app-pokemon-details>
+</div>

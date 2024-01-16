@@ -1,0 +1,7 @@
+:host::ng-deep .mat-chip-list-wrapper {
+  justify-content: center;
+}
+
+.add-button {
+  margin-top: 3rem;
+}

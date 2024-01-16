@@ -1,0 +1,11 @@
+app-container {
+  height: 100vh;
+}
+
+app-pokemon-list {
+  float: left;
+}
+
+app-pokemon-details {
+  float: left;
+}

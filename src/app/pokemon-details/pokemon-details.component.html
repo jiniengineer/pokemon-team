@@ -1,0 +1,21 @@
+<div style="text-align: center" *ngIf="details$ | async as details">
+  <img [src]="details?.sprites.front_default" height="200" width="200" />
+  <h3>{{ details.name | titlecase }}</h3>
+  <mat-chip-list>
+    <mat-chip
+      style="background-color: {{ typeColors[type] }}"
+      selected
+      *ngFor="let type of details?.types"
+      >{{ type }}
+    </mat-chip>
+  </mat-chip-list>
+
+  <button
+    class="add-button"
+    mat-raised-button
+    color="primary"
+    (click)="addedToTeam.emit(details?.name)"
+  >
+    Add to Team
+  </button>
+</div>
